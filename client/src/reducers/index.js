@@ -6,8 +6,10 @@ import { TOTAL_LOGOUT } from '../actions/root';
 
 // reducers
 import { phones } from './phones';
+import { common } from './common';
 
 const AppReducer = combineReducers({
+  common,
   phones,
   routing
 });

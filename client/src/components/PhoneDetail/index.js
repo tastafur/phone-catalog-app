@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 
-import Director from './stateless';
-import { askForPersonSubmit } from '../../actions/phones';
+import PhoneDetail from './stateless';
 
 const mapStateToProps = state => ({
-  person: state.person.person,
+  phones: state.phones.phones,
 });
 
-const mapDispatchToProps = dispatch => ({
+/*const mapDispatchToProps = dispatch => ({
   askForPersonSubmit: () => dispatch(askForPersonSubmit())
-});
+});*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(Director);
+export default connect(mapStateToProps)(PhoneDetail);

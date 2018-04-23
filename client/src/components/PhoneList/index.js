@@ -1,17 +1,11 @@
 import { connect } from 'react-redux';
 
-import Director from './stateless';
-import { phonesFetch } from '../../actions/phones';
+import { unNormalize } from "../../utils";
 
-const mapStateToProps = state => {
+import PhoneList from './stateless';
 
-  return {
-    phones: state.phones.phones,
-  }
-};
-
-const mapDispatchToProps = dispatch => ({
-  phonesFetch: () => dispatch(phonesFetch())
+const mapStateToProps = state => ({
+  phones: unNormalize(state.phones.phones),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Director);
+export default connect(mapStateToProps)(PhoneList);

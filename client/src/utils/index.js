@@ -10,3 +10,12 @@ export function normalize(data, name, typeId = 'id') {
     [`${name}sByName`]: itemsById
   };
 }
+
+export const unNormalize = (data) =>
+  Object.keys(data).map((id) => data[id]);
+
+export const slugify = (text) =>
+  text.replace(/\s+/g, '-').trim();
+
+export const reslugify = (text) =>
+  text.replace(/-+/g, ' ').trim();
