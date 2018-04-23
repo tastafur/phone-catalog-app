@@ -8,4 +8,21 @@
   }
 }
 
+.icon-arrow {
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 5px 5px #002bffb0;
+  position: relative;
+  &:hover {
+    top: 2px;
+    left: 2px;
+    box-shadow: 4px 4px #002bffb0;
+  }
+  &:active {
+    top: 5px;
+    left: 5px;
+    box-shadow: 0 0 #002bffb0;
+  }
+}
+
 

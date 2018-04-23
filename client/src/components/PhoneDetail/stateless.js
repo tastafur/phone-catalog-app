@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Grid, Row, Col, Panel } from 'react-bootstrap';
 
+import { LinkContainer } from 'react-router-bootstrap';
+
 import { reslugify } from '../../utils';
 
 import './style.scss';
@@ -42,6 +44,12 @@ export default class PhoneDetail extends Component {
                 }
               </Panel.Body>
             </Panel>
+            <LinkContainer to={'/phone-list'}>
+              <img
+                className={'icons-os icon-arrow'}
+                src={`http://localhost:3000/icon-back.png`}
+              />
+            </LinkContainer>
           </Col>
         </Row>
       </Grid>
