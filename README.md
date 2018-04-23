@@ -12,3 +12,5 @@ Phone Catalog
 ```
 
 > yarn build + index.html + dest/build.js => deploy
+
+## Next test e2e
