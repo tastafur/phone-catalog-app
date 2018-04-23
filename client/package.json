@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --open --inline --hot --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "node_modules/.bin/eslint .",
-    "precommit": "npm run lint"
+    "precommit": "node_modules/.bin/eslint ."
   },
   "author": "",
   "license": "ISC",
