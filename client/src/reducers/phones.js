@@ -1,3 +1,5 @@
+import { normalize } from '../utils';
+
 import {
   ALL_PHONES_SET
 } from '../actions/phones';
@@ -11,25 +13,14 @@ export function phones(state = initialPhones, action) {
   let nextState;
   switch (action.type) {
     case ALL_PHONES_SET:
-      const devicesRaw = action.payload.phones;
-      const { devices, devicesById } = normalize(devicesRaw, 'device');
+      const phonesRaw = action.payload.phones;
+      const { phones, phonesByName } = normalize(phonesRaw, 'phone', 'DeviceName');
 
       nextState = {
-        devices,
-        devicesById
+        phones,
+        phonesByName
       };
-      nextState = {
-        phones: {
-          ...state.phones,
-          [action.payload.phones.DeviceName]: {
-            ...action.payload.phones
-          }
-        },
-        phonesByName: [
-          ...state.phonesByName,
-          action.payload.device.id
-        ]
-      };
+
       break;
     default:
       return state;

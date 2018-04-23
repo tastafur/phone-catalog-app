@@ -7,6 +7,6 @@ export function normalize(data, name, typeId = 'id') {
 
   return {
     [`${name}s`]: items,
-    [`${name}sById`]: itemsById
+    [`${name}sByName`]: itemsById
   };
 }

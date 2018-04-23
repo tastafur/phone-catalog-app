@@ -8,7 +8,7 @@ import { TOTAL_LOGOUT } from '../actions/root';
 import { phones } from './phones';
 
 const AppReducer = combineReducers({
-  person: phones,
+  phones,
   routing
 });
 

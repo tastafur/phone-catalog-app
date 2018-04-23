@@ -3,6 +3,12 @@ const rp = require('request-promise');
 
 const app = express();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/phones', (req, res) => {
   Promise.all([
     rp({
@@ -18,7 +24,7 @@ app.get('/phones', (req, res) => {
     res.send(
       repos
         .map((mobs) => JSON.parse(mobs))
-        .map((mobs) => mobs.filter(mob => mob.DeviceName === 'Samsung Galaxy S7' || mob.DeviceName === 'Apple iPhone 7'))))
+        .map((mobs) => mobs.find(mob => mob.DeviceName === 'Samsung Galaxy S7' || mob.DeviceName === 'Apple iPhone 7'))))
 
   .catch((err) =>
     res.status(500, {

@@ -4,7 +4,7 @@ import Director from './stateless';
 import { phonesFetch } from '../../actions/phones';
 
 const mapStateToProps = state => ({
-  phones: state.person.person,
+  phones: state.phones.phones,
 });
 
 const mapDispatchToProps = dispatch => ({
