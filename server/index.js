@@ -9,6 +9,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(express.static('static'));
+
 app.get('/phones', (req, res) => {
   Promise.all([
     rp({
@@ -24,7 +26,7 @@ app.get('/phones', (req, res) => {
     res.send(
       repos
         .map((mobs) => JSON.parse(mobs))
-        .map((mobs) => mobs.find(mob => mob.DeviceName === 'Samsung Galaxy S7' || mob.DeviceName === 'Apple iPhone 7'))))
+        .map((mobs) => mobs.find(mob => (mob.DeviceName === 'Samsung Galaxy S7' && (mob['icon'] = 'samsung-s7') || mob.DeviceName === 'Apple iPhone 7' && (mob['icon'] = 'iphone-7'))))))
 
   .catch((err) =>
     res.status(500, {

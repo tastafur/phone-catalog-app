@@ -12,9 +12,9 @@ const initialPhones = {
 export function phones(state = initialPhones, action) {
   let nextState;
   switch (action.type) {
-    case ALL_PHONES_SET:
+    case ALL_PHONES_SET: {
       const phonesRaw = action.payload.phones;
-      const { phones, phonesByName } = normalize(phonesRaw, 'phone', 'DeviceName');
+      const {phones, phonesByName} = normalize(phonesRaw, 'phone', 'DeviceName');
 
       nextState = {
         phones,
@@ -22,6 +22,7 @@ export function phones(state = initialPhones, action) {
       };
 
       break;
+    }
     default:
       return state;
   }

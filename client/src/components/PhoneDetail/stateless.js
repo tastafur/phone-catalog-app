@@ -9,7 +9,8 @@ import './style.scss';
 
 export default class PhoneDetail extends Component {
   static propTypes = {
-    phones: PropTypes.object
+    phones: PropTypes.object,
+    params: PropTypes.object
   };
 
   constructor(props) {

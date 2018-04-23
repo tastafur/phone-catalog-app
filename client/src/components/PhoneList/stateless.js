@@ -28,10 +28,16 @@ export default class PhonesList extends Component {
               {
                 phones.map( (phone, index) =>
                   <LinkContainer key={index} to={`/phone-detail/${slugify(phone.DeviceName)}`}>
-                    <ListGroupItem>{phone.DeviceName} {phone.os}</ListGroupItem>
+                    <ListGroupItem>
+                      <img
+                        className={'icons-os'}
+                        src={`http://localhost:3000/icons-${phone.os.indexOf('iOS') > -1 ? 'apple' : 'android'}.png`}
+                      />
+                      {phone.DeviceName}
+                    </ListGroupItem>
                   </LinkContainer>)
               }
-              </ListGroup>
+            </ListGroup>
           </Col>
         </Row>
       </Grid>
