@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { Grid, Row, Col, ListGroup, ListGroupItem  } from 'react-bootstrap';
+
 import './style.scss';
 
-export default class Director extends Component {
+export default class PhonesList extends Component {
   static propTypes = {
-    person: PropTypes.string,
+    phones: PropTypes.object,
     phonesFetch: PropTypes.func,
   };
 
@@ -15,10 +17,20 @@ export default class Director extends Component {
   }
 
   render() {
+    const { phones } = this.props;
+    console.log('phones', phones);
     return (
-      <div>
-        {'Phones'}
-      </div>
+      <Grid>
+        <Row>
+          <Col xs={12} md={12}>
+            <ListGroup>
+              {
+                phones.map( (phone, index) => <ListGroupItem key={index}>{phone.DeviceName}</ListGroupItem>)
+              }
+              </ListGroup>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
