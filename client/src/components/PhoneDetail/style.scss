@@ -1,3 +1,11 @@
-
+.panel.panel-default {
+  box-shadow: 1px 2px 2px 0px #002bffb0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  & > .panel-heading{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+}
 
 

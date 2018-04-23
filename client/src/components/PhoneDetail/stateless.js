@@ -27,12 +27,18 @@ export default class PhoneDetail extends Component {
           <Col xs={12} md={12}>
             <Panel>
               <Panel.Heading>
-                <Panel.Title componentClass="h3">Mobile: {phone.DeviceName}</Panel.Title>
+                <Panel.Title componentClass="h3">
+                  Mobile: {phone.DeviceName}
+                  <img
+                    className={'icons-os'}
+                    src={`http://localhost:3000/${phone.icon}.png`}
+                  />
+                </Panel.Title>
               </Panel.Heading>
               <Panel.Body>
                 {
                   Object.keys(phone).map((key, index) =>
-                    key === 'DeviceName' ? null : <p key={index}>{key + ': ' + phone[key]}</p>)
+                    (key === 'DeviceName' || index > 7) ? null : <p key={index}>{key + ': ' + phone[key]}</p>)
                 }
               </Panel.Body>
             </Panel>
