@@ -19,16 +19,21 @@ export default class PhoneDetail extends Component {
     }
   }
   render() {
-    const { DeviceName } = this.state.phone;
+    const { phone } = this.state;
     return (
       <Grid>
         <Row>
           <Col xs={12} md={12}>
             <Panel>
               <Panel.Heading>
-                <Panel.Title componentClass="h3">Mobile: {DeviceName}</Panel.Title>
+                <Panel.Title componentClass="h3">Mobile: {phone.DeviceName}</Panel.Title>
               </Panel.Heading>
-              <Panel.Body>Panel content</Panel.Body>
+              <Panel.Body>
+                {
+                  Object.keys(phone).map((key, index) =>
+                    key === 'DeviceName' ? null : <p key={index}>{key + ': ' + phone[key]}</p>)
+                }
+              </Panel.Body>
             </Panel>
           </Col>
         </Row>
