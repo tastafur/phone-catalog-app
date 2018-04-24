@@ -13,4 +13,12 @@ Phone Catalog
 
 > yarn build + index.html + dest/build.js => deploy
 
-## Next test e2e
+## How launch test e2e
+```sh
+  cd server
+  yarn
+  yarn start
+  cd client
+  yarn
+  yarn test:e2e
+```
