@@ -46,7 +46,7 @@ export default class PhoneDetail extends Component {
             </Panel>
             <LinkContainer to={'/phone-list'}>
               <img
-                className={'icons-os icon-arrow'}
+                className={'icons-os icon-arrow button-back'}
                 src={`http://localhost:3000/icon-back.png`}
               />
             </LinkContainer>

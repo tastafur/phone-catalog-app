@@ -27,7 +27,7 @@ export default class PhonesList extends Component {
             <ListGroup>
               {
                 phones.map( (phone, index) =>
-                  <LinkContainer key={index} to={`/phone-detail/${slugify(phone.DeviceName)}`}>
+                  <LinkContainer key={index} className={`button-${index}`} to={`/phone-detail/${slugify(phone.DeviceName)}`}>
                     <ListGroupItem>
                       <img
                         className={'icons-os'}
