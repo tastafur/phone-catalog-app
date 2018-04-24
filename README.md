@@ -11,8 +11,6 @@ Phone Catalog
   yarn start
 ```
 
-> yarn build + index.html + dest/build.js => deploy
-
 ## How launch test e2e
 ```sh
   cd server
@@ -22,3 +20,5 @@ Phone Catalog
   yarn
   yarn test:e2e
 ```
+
+> yarn build + index.html + dest/build.js => deploy
